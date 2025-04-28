@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --bg-color: #000000;
+    --second-bg-color: #101010;
+    --text-color: #fff;
+    --main-color: #22d6d6d8;
+}
+      
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    backdrop-filter: #000;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.navigation a {
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ffffffc4;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background-color: #ffffff;
+    color: #cfbcbc;
+    box-shadow: 0 0 20px #b4a059;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+.storia {
+    display: flex;
+    justify-content: center;      
+    align-items: center;          
+    gap: 6rem;
+    flex-wrap: wrap;
+    min-height: 100vh;           
+    padding-top: 10rem;   /* utile per non sovrapporsi all'header */
+    padding-bottom: 5rem;
+}
+
+
+.storia-img img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.storia-img img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px var(--main-color), 
+                0 0 50px #4988c4, 
+                0 0 100px #a89c57;
+}
+
+
+.storia-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.storia-content h1 {
+    font-size: 4rem;
+    color: var(--main-color);
+}
+
+.storia-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.storia-content a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--main-color);
+    color: #000;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.storia-content a:hover {
+    background-color: #f0c420;
+    transform: scale(1.05);
+    color: #000;
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.3;
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+
+
+
+
+
+
+
+
+.center {
+  height: 20vh;             /* altezza  */
+  width: 100vw;              /* larghezza */
+  display: flex;             
+  justify-content: center;   /* questo centra orizzontalmente */
+  align-items: center;       /* questo centra verticalmente */
+  background: transparent;     
+}
+
+.hover {
+  display: inline-block;
+  position:relative;
+}
+
+.explosive-text {
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  position:relative;
+  transition: transform 0.3s ease-out;
+}
+
+.explosive-text:hover {
+  transform: scale(1.1);
+}
+
+.explosive-text:hover::before,
+.explosive-text:hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: burst 0.8s ease-out forwards;
+}
+
+.explosive-text:hover::before {
+  background: radial-gradient(circle, rgb(42,118,178), transparent);
+  z-index: -1;
+}
+
+.explosive-text:hover::after {
+  background: radial-gradient(circle, rgb(112,174,175), transparent);
+  z-index: -2;
+}
+
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .container{
+    max-width:1000px;
+    margin:100px auto;
+    flex-wrap:wrap;   /*lo mette a sinistra*/
+    justify-content:space-around;
+  }
+  
+  .card{
+    position:relative;
+    margin:20px 0;
+    width:400px;
+    height:500px;
+    background: linear-gradient(8deg, rgb(38,63,94) 0%,rgb(45,92,134) 4%,rgba(56, 151, 151, 0.733) 100%);
+    transform-style:preserve-3d;
+    transform:perspective(2000px);
+    transition:1s;
+    box-shadow:inset 100px 0 50px rgba(0,0,0,0.5);
+    border-radius: 20px;             
+
+  }
+  
+  .card:hover{
+    z-index:1111;
+    transform:perspective(2000px) rotate(-10deg);
+    box-shadow:inset 20px 0 50px rgba(0,0,0,0.5);
+  }
+  
+  .card .img-container{
+    position:relative;
+    width:100%;
+    height:100%;
+    border:1px solid #000000;
+    box-sizing:border-box;
+    transform-origin:left;
+    z-index:1;
+    transition:1s;
+  }
+  
+  .card .img-container img{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    border-radius: 20px;         /*angoli*/     
+
+  }
+  
+  .card:hover .img-container{
+    transform:rotateY(-135deg);
+  }
+  
+  .card .card-details{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    left:0;
+    top:0;
+    padding:50px;
+    color:#ffffff;
+  }
+  
+   .card .card-details h2{
+    margin:0;
+    border-radius: 8px;             
+    text-transform:uppercase;
+    font-size:2em;
+    color:#edea36;
+  }
+  
+  .card .card-details p{
+    margin:0;
+    padding:0;
+    line-height:25px;
+    font-size:1.1em;
+  }
+
+
+
+
+
+
+
+
+  .container{
+    max-width:1000px;
+    margin:100px auto;
+    flex-wrap:wrap;  
+    justify-content:space-between;  
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .card-2{
+    position:relative;
+    margin:20px 0;
+    width:400px;
+    height:500px;
+    background: linear-gradient(8deg, rgb(38,63,94) 0%,rgb(45,92,134) 4%,rgba(56, 151, 151, 0.733) 100%);
+    transform-style:preserve-3d;
+    transform:perspective(2000px);
+    transition:1s;
+    box-shadow:inset 100px 0 50px rgba(0,0,0,0.5);
+    border-radius: 20px;             
+
+  }
+  
+  .card-2:hover{
+    z-index:1111;
+    transform:perspective(2000px) rotate(-10deg);
+    box-shadow:inset 20px 0 50px rgba(0,0,0,0.5);
+  }
+  
+  .card-2 .img-container-2{
+    position:relative;
+    width:100%;
+    height:100%;
+    border:1px solid #000000;
+    box-sizing:border-box;
+    transform-origin:left;
+    z-index:1;
+    transition:1s;
+  }
+  
+  .card-2 .img-container-2 img{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    border-radius: 20px;         /*angoli*/     
+
+  }
+  
+  .card-2:hover .img-container-2{
+    transform:rotateY(-135deg);
+  }
+  
+  .card-2 .card-details-2{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    left:0;
+    top:0;
+    padding:50px;
+    color:#ffffff;
+  }
+  
+   .card-2 .card-details-2 h2{
+    margin:0;
+    border-radius: 8px;             
+    text-transform:uppercase;
+    font-size:2em;
+    color:#edea36;
+  }
+  
+  .card-2 .card-details-2 p{
+    margin:0;
+    padding:0;
+    line-height:25px;
+    font-size:1.1em;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* --- Aggiungiamo le media query per il responsive design --- */
+
+/* Per schermi più piccoli di 1024px (tablet) */
+@media (max-width: 1024px) {
+  .storia {
+      gap: 3rem;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+  }
+
+  .storia-img img {
+      width: 400px;
+      height: 400px;
+  }
+
+  .storia-content h1 {
+      font-size: 3rem;
+  }
+
+  .storia-content p {
+      font-size: 1.1rem;
+  }
+
+  .container {
+      max-width: 90%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card,
+  .card-2 {
+      width: 90%;
+      height: 400px;
+  }
+}
+
+/* Per schermi più piccoli di 768px (cellulari grandi) */
+@media (max-width: 768px) {
+  header {
+      padding: 15px 30px;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .navigation a {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+  }
+
+  .storia {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 7rem;
+      padding-bottom: 3rem;
+  }
+
+  .storia-img img {
+      width: 300px;
+      height: 300px;
+  }
+
+  .storia-content {
+      max-width: 90%;
+  }
+
+  .storia-content h1 {
+      font-size: 2.5rem;
+  }
+
+  .storia-content p {
+      font-size: 1rem;
+  }
+
+  .center {
+      height: 15vh;
+  }
+
+  .explosive-text {
+      font-size: 2.2rem;
+  }
+
+  .card,
+  .card-2 {
+      width: 95%;
+      height: 350px;
+  }
+}
+
+/* Per schermi più piccoli di 480px (smartphone piccoli) */
+@media (max-width: 480px) {
+  .navigation a {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+  }
+
+  .storia-img img {
+      width: 250px;
+      height: 250px;
+  }
+
+  .storia-content h1 {
+      font-size: 2rem;
+  }
+
+  .storia-content p {
+      font-size: 0.9rem;
+  }
+
+  .explosive-text {
+      font-size: 2rem;
+  }
+
+  .card,
+  .card-2 {
+      width: 100%;
+      height: 300px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swirl {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, #ffe066, #f0c420);
+  animation: vanish 1.2s ease-out forwards;
+  box-shadow: 0 0 10px #fffca8, 0 0 20px #fef08a;
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5) rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
